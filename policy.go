@@ -44,12 +44,24 @@ type Policy interface {
 
 // DefaultPolicy is the default implementation of the policy interface.
 type DefaultPolicy struct {
+	// ID of the policy.
 	ID          string     `json:"id" gorethink:"id"`
+
+	// Description of the policy.
 	Description string     `json:"description" gorethink:"description"`
+
+	// Subjects impacted by the policy.
 	Subjects    []string   `json:"subjects" gorethink:"subjects"`
+	// Effect of the policy
 	Effect      string     `json:"effect" gorethink:"effect"`
+
+	// Resources impacted by the policy.
 	Resources   []string   `json:"resources" gorethink:"resources"`
+
+	// Actions impacted by the policy.
 	Actions     []string   `json:"actions" gorethink:"actions"`
+
+	// Conditions under which the policy is active.
 	Conditions  Conditions `json:"conditions" gorethink:"conditions"`
 }
 
